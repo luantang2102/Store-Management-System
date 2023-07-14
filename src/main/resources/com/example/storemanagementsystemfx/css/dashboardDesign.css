@@ -1,0 +1,214 @@
+.top-form{
+    -fx-background-color: #dde8ff;
+}
+
+.semi-top{
+    -fx-background-color: #efefef;
+    -fx-border-color: #000;
+    -fx-border-width: .2px .4px .4px .4px;
+}
+
+.close{
+    -fx-background-color: transparent;
+    -fx-cursor:hand;
+}
+.close:hover{
+    -fx-background-color: #ee5363;
+}
+
+.chart-btn{
+    -fx-background-color: transparent;
+    -fx-cursor:hand;
+}
+.chart-btn:hover{
+    -fx-background-color: #25bcbf;
+}
+
+#close{
+    -fx-background-color: transparent;
+    -fx-cursor:hand;
+}
+#close:hover{
+    -fx-background-color: #ee5363;
+}
+.minimize{
+    -fx-background-color: transparent;
+    -fx-cursor:hand;
+}
+.minimize:hover{
+    -fx-background-color: #ddd;
+}
+
+.nav1{
+    -fx-background-color: linear-gradient(to bottom right, #70a3f1, #9abaf6);
+    -fx-background-radius: 5px;
+}
+
+.nav2{
+    -fx-background-color: #fff;
+    -fx-background-radius: 5px;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 8,0,0,0);
+}
+
+.nav-btn{
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-font-size: 14px;
+    -fx-font-family: Arial;
+    -fx-cursor:hand;
+    -fx-text-fill: #00246B;
+    -fx-border-color: #7fcbfa;
+    -fx-border-radius: 0px 5px 5px 0px;
+    -fx-border-width: 1px;
+}
+.nav-btn:hover{
+    -fx-background-color: #309ed3;
+    -fx-text-fill: #fff;
+    -fx-border-width: 0px;
+}
+
+.signout{
+    -fx-background-color: #8AB6F9;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+.signout:hover{
+    -fx-background-color: #25bcbf;
+}
+
+.white-bg{
+    -fx-background-color: #fff;
+    -fx-background-radius: 6px;
+}
+
+.blue-bg{
+    -fx-background-color: #dde8ff;
+    -fx-background-radius: 6px;
+}
+
+.card{
+    -fx-background-color: /*linear-gradient(to bottom right, #629fff, #7ba3e3)*/ #afc7f8;
+    -fx-background-radius: 4px 8px 8px 4px;
+}
+
+
+.textfield{
+    -fx-background-color: #eee;
+    -fx-font-family: Tahoma;
+    -fx-border-color: #7fcbfa;
+    -fx-border-radius: 2px;
+    -fx-border-width: .5px;
+}
+.textfield:focused{
+    -fx-border-width: 1.5px;
+    -fx-background-color: #f5f5f5;
+}
+
+#orderDetailButton{
+    -fx-border-color: transparent;
+    -fx-background-radius: 3px;
+    -fx-background-color: transparent;
+}
+
+#orderDetailButton:hover {
+    -fx-background-color: #25bcbf;
+}
+
+.add-btn{
+    -fx-background-color: #3258d9;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+}
+.add-btn:hover{
+    -fx-background-color: #25bcbf;
+}
+
+.new-btn{
+    -fx-background-color: #64a6fc;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+}
+.new-btn:hover{
+    -fx-background-color: #25bcbf;
+}
+
+.update-btn{
+    -fx-background-color: #4ab479;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+}
+.update-btn:hover{
+    -fx-background-color: #30a761;
+}
+
+.clear-btn{
+    -fx-background-color: #77b2fd;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+}
+.clear-btn:hover{
+    -fx-background-color: #25bcbf;
+}
+
+.delete-btn{
+    -fx-background-color: #c94a58;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-text-fill: #fff;
+}
+.delete-btn:hover{
+    -fx-background-color: #b12d3c;
+}
+
+.search{
+    -fx-background-color: #f5f5f5;
+    -fx-border-width: 1.2px;
+    -fx-border-radius: 6px;
+    -fx-border-color: #7fcbfa;
+    -fx-font-size: 13px;
+    -fx-padding: 0px 0px 0px 28px;
+}
+.search:focused{
+    -fx-background-color: #fff;
+}
+
+.date-picker{
+    -fx-background-color: #f5f5f5;
+    -fx-border-width: 1.2px;
+    -fx-border-radius: 3px;
+    -fx-border-color: #7fcbfa;
+    -fx-padding:-1px -1px -1px -1px;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-border-color: #8AB6F9;
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+    -fx-padding: 0px;
+}
+.table-view .table-column{
+    -fx-alignment: CENTER;
+}
+.table-view .column-header-background{
+    -fx-background-color: #8AB6F9;
+    -fx-background-radius: 8px 8px 0px 0px;
+}
+.table-view .column-header{
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+.table-view .column-header .label{
+    -fx-text-fill: #00246b;
+    -fx-font-family: Arial;
+}

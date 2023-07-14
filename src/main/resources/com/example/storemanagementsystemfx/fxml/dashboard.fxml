@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.storemanagementsystemfx.controller.DashboardController">
+   <children>
+      <AnchorPane fx:id="mainForm" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="600.0" prefWidth="1100.0" styleClass="blue-bg" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="46.0" prefWidth="1098.0" styleClass="top-form" stylesheets="@../css/dashboardDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="-3.6" layoutY="-2.0" prefHeight="35.0" prefWidth="1100.0" styleClass="semi-top" stylesheets="@../css/dashboardDesign.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button fx:id="closeButton" layoutX="1046.0" layoutY="3.0" mnemonicParsing="false" onAction="#close" prefHeight="27.0" prefWidth="52.0" styleClass="close" stylesheets="@../css/dashboardDesign.css">
+                                 <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/close.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="minimizeButton" layoutX="992.0" layoutY="3.0" mnemonicParsing="false" onAction="#minimize" prefHeight="26.0" prefWidth="52.0" styleClass="minimize" stylesheets="@../css/dashboardDesign.css">
+                                 <graphic>
+                                    <ImageView fitHeight="15.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/minus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="47.0" layoutY="6.0" text="Store Mananement System">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/store-black.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="554.0" prefWidth="218.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="8.0" layoutY="6.0" prefHeight="178.0" prefWidth="200.0" stylesheets="@../css/dashboardDesign.css">
+                           <children>
+                              <ImageView fitHeight="77.0" fitWidth="76.0" layoutX="62.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/user-darkblue.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="63.0" layoutY="87.0" text="Welcome," textFill="#00246b">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="25.0" layoutY="129.0" prefHeight="18.0" prefWidth="31.0" text="User:" textFill="#00246b">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <Label fx:id="username" alignment="CENTER_RIGHT" layoutX="62.0" layoutY="125.0" prefHeight="26.0" prefWidth="114.0" text="Username" textFill="#00246b">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="nav1" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane layoutX="9.0" layoutY="200.0" prefHeight="337.0" prefWidth="200.0" stylesheets="@../css/dashboardDesign.css">
+                           <children>
+                              <Button fx:id="dashboardButton" layoutX="6.0" layoutY="30.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="187.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Dashboard" />
+                              <Button fx:id="fdButton" layoutX="6.0" layoutY="80.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="187.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Foods/Drinks" />
+                              <Button fx:id="cusButton" layoutX="6.0" layoutY="130.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="187.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Customers" />
+                              <Button fx:id="orderButton" layoutX="6.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="44.0" prefWidth="187.0" styleClass="nav-btn" stylesheets="@../css/dashboardDesign.css" text="Orders" />
+                              <Button fx:id="logOutButton" layoutX="14.0" layoutY="290.0" mnemonicParsing="false" onAction="#logOut" prefHeight="28.0" prefWidth="172.0" styleClass="signout" stylesheets="@../css/dashboardDesign.css">
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" styleClass="signout">
+                                       <image>
+                                          <Image url="@../icons/sign-out.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Rectangle fx:id="dashboardRec" arcHeight="5.0" arcWidth="5.0" fill="#5eb4ff" height="44.0" layoutX="4.0" layoutY="30.0" smooth="false" stroke="#5eb4ff" strokeType="INSIDE" width="3.5" />
+                              <Rectangle fx:id="fdRec" arcHeight="5.0" arcWidth="5.0" fill="#5eb4ff" height="44.0" layoutX="3.0" layoutY="80.0" smooth="false" stroke="#5eb4ff" strokeType="INSIDE" visible="false" width="3.5" />
+                              <Rectangle fx:id="cusRec" arcHeight="5.0" arcWidth="5.0" fill="#5eb4ff" height="44.0" layoutX="3.0" layoutY="130.0" smooth="false" stroke="#5eb4ff" strokeType="INSIDE" visible="false" width="3.5" />
+                              <Rectangle fx:id="orderRec" arcHeight="5.0" arcWidth="5.0" fill="#5eb4ff" height="44.0" layoutX="3.0" layoutY="180.0" smooth="false" stroke="#5eb4ff" strokeType="INSIDE" visible="false" width="3.5" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="nav2" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                        <Separator layoutX="7.0" layoutY="190.0" opacity="0.5" prefHeight="10.0" prefWidth="203.0" />
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="554.0" prefWidth="778.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Separator layoutX="-13.0" layoutY="2.0" opacity="0.5" orientation="VERTICAL" prefHeight="542.0" prefWidth="22.0" />
+                        <AnchorPane fx:id="dashboardForm" layoutX="10.0" layoutY="2.0" prefHeight="554.4" prefWidth="884.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="150.0" prefWidth="857.0" stylesheets="@../css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="23.0" layoutY="6.0" prefHeight="138.0" prefWidth="235.0" styleClass="card" stylesheets="@../css/dashboardDesign.css">
+                                       <children>
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" layoutX="14.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/customers.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="47.0" layoutY="102.0" text="Number of Customers" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_numCustomers" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="14.0" prefHeight="30.0" prefWidth="183.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children></AnchorPane>
+                                    <AnchorPane layoutX="598.0" layoutY="6.0" prefHeight="138.0" prefWidth="235.0" styleClass="card" stylesheets="@../css/dashboardDesign.css">
+                                       <children>
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" layoutX="17.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/dollars.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="86.0" layoutY="102.0" text="Total Income" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_totalIncome" alignment="CENTER_RIGHT" layoutX="6.0" layoutY="14.0" prefHeight="29.0" prefWidth="192.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="28.0" fitWidth="22.0" layoutX="203.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/coins.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="311.0" layoutY="6.0" prefHeight="138.0" prefWidth="235.0" styleClass="card" stylesheets="@../css/dashboardDesign.css">
+                                       <children>
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" layoutX="14.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/dollar.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="86.0" layoutY="102.0" text="Today's Income" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="dashboard_todayIncome" alignment="CENTER_RIGHT" layoutX="6.0" layoutY="15.0" prefHeight="30.0" prefWidth="192.0" text="0">
+                                             <font>
+                                                <Font name="System Bold" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="28.0" fitWidth="22.0" layoutX="203.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/coins.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="11.0" layoutY="176.0" prefHeight="364.0" prefWidth="858.0" stylesheets="@../css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="12.0" layoutY="64.0" prefHeight="286.0" prefWidth="410.0">
+                                       <children>
+                                          <AreaChart fx:id="dashboard_numOrdersChart" layoutX="-3.0" layoutY="-3.0" legendVisible="false" prefHeight="286.4" prefWidth="410.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </AreaChart>
+                                          <AreaChart fx:id="dashboard_incomeChart" legendVisible="false" prefHeight="286.4" prefWidth="410.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="439.0" layoutY="64.0" prefHeight="286.0" prefWidth="410.0">
+                                       <children>
+                                          <ImageView fx:id="sadIcon" fitHeight="153.0" fitWidth="107.0" layoutX="152.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icons/sad.png" />
+                                             </image>
+                                          </ImageView>
+                                          <PieChart fx:id="dashboard_bspChart" labelLineLength="50.0" layoutY="-64.0" prefHeight="350.0" prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="21.0" layoutY="11.0" text="Weekly Sales" textFill="#00246b">
+                                       <font>
+                                          <Font name="Calibri" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="21.0" layoutY="38.0" mnemonicParsing="false" onAction="#dashboardSales" prefHeight="26.0" prefWidth="58.0" styleClass="chart-btn" text="Sales" />
+                                    <Button layoutX="79.0" layoutY="38.0" mnemonicParsing="false" onAction="#dashboardOrders" prefHeight="26.0" prefWidth="58.0" styleClass="chart-btn" text="Orders" />
+                                    <Separator layoutX="23.0" layoutY="64.0" prefHeight="4.0" prefWidth="388.0" />
+                                    <Rectangle fx:id="dashboard_salesRec" arcHeight="5.0" arcWidth="5.0" fill="#5eb4ff" height="1.0" layoutX="21.0" layoutY="65.0" stroke="#5eb4ff" strokeType="INSIDE" width="58.0" />
+                                    <Rectangle fx:id="dashboard_ordersRec" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="1.0" layoutX="79.0" layoutY="65.0" stroke="#5eb4ff" strokeType="INSIDE" visible="false" width="58.0" />
+                                    <Label layoutX="439.0" layoutY="11.0" text="Best Selling Products" textFill="#00246b">
+                                       <font>
+                                          <Font name="Calibri" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="418.0" layoutY="52.0" opacity="0.63" orientation="VERTICAL" prefHeight="288.0" prefWidth="15.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="fdForm" layoutX="14.0" layoutY="14.0" prefHeight="554.0" prefWidth="885.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="4.0" layoutY="2.0" prefHeight="545.0" prefWidth="871.0" stylesheets="@../css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="fd_searchBar" layoutX="9.0" layoutY="47.0" onKeyTyped="#fdSearch" prefHeight="26.0" prefWidth="569.0" promptText="Search..." styleClass="search" stylesheets="@../css/dashboardDesign.css" />
+                                    <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="14.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="fd_tableView" layoutX="7.0" layoutY="83.0" onMouseClicked="#fdSelect" prefHeight="454.0" prefWidth="570.0" stylesheets="@../css/dashboardDesign.css">
+                                      <columns>
+                                        <TableColumn fx:id="fd_col_productId" prefWidth="97.60000419616699" text="Product ID" />
+                                          <TableColumn fx:id="fd_col_productName" prefWidth="137.59998321533203" text="Product Name" />
+                                          <TableColumn fx:id="fd_col_productType" prefWidth="79.20004272460938" text="Type" />
+                                          <TableColumn fx:id="fd_col_productPrice" prefWidth="104.7999267578125" text="Price" />
+                                          <TableColumn fx:id="fd_col_productStatus" prefWidth="148.79995727539062" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                    <AnchorPane fx:id="fd_editPane" layoutX="587.0" layoutY="83.0" prefHeight="454.0" prefWidth="276.0" stylesheets="@../css/dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="blue-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="35.0" layoutY="28.0" text="Product ID:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="13.0" layoutY="63.0" prefWidth="91.0" text="Product Name:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fd_productName" layoutX="103.0" layoutY="59.0" prefHeight="26.0" prefWidth="156.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
+                                          <Label layoutX="67.0" layoutY="98.0" text="Type: " textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="67.0" layoutY="133.0" text="Price:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="fd_productPrice" layoutX="103.0" layoutY="129.0" prefHeight="26.0" prefWidth="156.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
+                                          <Label fx:id="fd_productId" layoutX="105.0" layoutY="26.5" text="(Auto-generated)" textFill="#00246b">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="fd_productType" layoutX="103.0" layoutY="94.0" prefHeight="26.0" prefWidth="156.0" promptText="Choose..." styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
+                                          <Label layoutX="59.0" layoutY="168.0" text="Status:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="fd_productStatus" layoutX="103.0" layoutY="164.0" prefHeight="26.0" prefWidth="156.0" promptText="Choose..." styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
+                                          <Button fx:id="fd_addButton" layoutX="147.0" layoutY="271.0" mnemonicParsing="false" onAction="#fdAdd" prefHeight="58.0" prefWidth="90.0" styleClass="add-btn" text="Add">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="fd_updateButton" layoutX="147.0" layoutY="271.0" mnemonicParsing="false" onAction="#fdUpdate" prefHeight="58.0" prefWidth="90.0" styleClass="update-btn" text="Update" visible="false" />
+                                          <Button fx:id="fd_clearButton" layoutX="43.0" layoutY="212.0" mnemonicParsing="false" onAction="#fdClear" prefHeight="30.0" prefWidth="190.0" styleClass="clear-btn" text="Clear" />
+                                          <Button fx:id="fd_deleteButton" layoutX="39.0" layoutY="271.0" mnemonicParsing="false" onAction="#fdDelete" prefHeight="58.0" prefWidth="90.0" styleClass="delete-btn" text="Delete" visible="false" />
+                                          <Separator layoutX="38.0" layoutY="251.0" opacity="0.79" prefHeight="14.0" prefWidth="200.0" />
+                                          <Button layoutX="245.0" layoutY="1.0" mnemonicParsing="false" onAction="#fdEditClose" styleClass="close" stylesheets="@../css/dashboardDesign.css">
+                                             <graphic>
+                                                <ImageView fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/close.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <Button layoutX="767.0" layoutY="46.0" mnemonicParsing="false" onAction="#fdEdit" prefHeight="27.0" prefWidth="93.0" styleClass="signout" text="ADD/EDIT">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="17.0" layoutY="7.0" prefHeight="26.0" prefWidth="137.0" text="PRODUCTS" textFill="#00246b">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="17.0" layoutY="34.0" opacity="0.6" prefHeight="11.0" prefWidth="834.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="orderForm" prefHeight="554.4" prefWidth="885.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="538.0" prefWidth="872.0" stylesheets="@../css/dashboardDesign.css">
+                                 <children>
+                                    <TableView fx:id="order_tableView" layoutX="12.0" layoutY="104.0" onMouseClicked="#orderDetailSelect" prefHeight="367.0" prefWidth="610.0" stylesheets="@../css/dashboardDesign.css">
+                                       <columns>
+                                          <TableColumn fx:id="order_col_productId" prefWidth="133.5999813079834" text="Product ID" />
+                                          <TableColumn fx:id="order_col_productName" prefWidth="181.60000610351562" text="Product Name" />
+                                          <TableColumn fx:id="order_col_productType" prefWidth="98.39996337890625" text="Type" />
+                                          <TableColumn fx:id="order_col_productPrice" prefWidth="127.19998168945312" text="Price" />
+                                          <TableColumn fx:id="order_col_productQuantity" prefWidth="63.20001220703125" text="Quantity" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="20.0" layoutY="10.0" prefHeight="26.0" prefWidth="137.0" text="ORDER DETAILS" textFill="#00246b">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="48.0" layoutY="490.0" text="TOTAL AMOUNT: " textFill="#00246b">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="order_total" layoutX="222.0" layoutY="490.0" text="total" textFill="#0cd110">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="694.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/buyer.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="order_customerName" layoutX="730.0" layoutY="12.0" prefHeight="26.0" prefWidth="126.0" text="customerName" textFill="#00246b">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="16.0" layoutY="38.0" opacity="0.46" prefHeight="11.0" prefWidth="838.0" />
+                                    <Label layoutX="20.0" layoutY="49.0" text="ORDER ID " textFill="#00246b" />
+                                    <Label fx:id="order_orderId" layoutX="20.0" layoutY="67.0" prefHeight="26.0" prefWidth="137.0" text="orderID" textFill="#00246b">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane fx:id="order_editPane" layoutX="632.0" layoutY="104.0" prefHeight="426.0" prefWidth="233.0" styleClass="blue-bg" stylesheets="@../css/dashboardDesign.css">
+                                       <children>
+                                          <Label layoutX="76.0" layoutY="16.0" text="EDIT ORDER" textFill="#00246b">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="order_productId" layoutX="101.0" layoutY="100.0" prefHeight="26.0" prefWidth="122.0" promptText="Choose..." styleClass="textfield" />
+                                          <Label layoutX="10.0" layoutY="65.0" text="Product Name: " textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="105.0" text="Product ID: " textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="145.0" text="Quantity:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Spinner fx:id="order_quantity" editable="true" layoutX="101.0" layoutY="140.0" prefHeight="26.0" prefWidth="121.0" styleClass="textfield" />
+                                          <Button fx:id="order_addButton" layoutX="134.0" layoutY="266.0" mnemonicParsing="false" onAction="#orderDetailAdd" prefHeight="39.0" prefWidth="78.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Add">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font></Button>
+                                          <Button fx:id="order_removeButton" layoutX="24.0" layoutY="266.0" mnemonicParsing="false" onAction="#orderDetailRemove" prefHeight="39.0" prefWidth="78.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Remove" visible="false" />
+                                          <Button fx:id="order_editCloseButton" layoutX="206.0" mnemonicParsing="false" onAction="#orderDetailEditClose" styleClass="close" stylesheets="@../css/dashboardDesign.css">
+                                             <graphic>
+                                                <ImageView fitHeight="12.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/close.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="order_clearButton" layoutX="59.0" layoutY="189.0" mnemonicParsing="false" onAction="#orderDetailClear" prefHeight="30.0" prefWidth="114.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clear" />
+                                          <Button fx:id="order_updateButton" layoutX="134.0" layoutY="266.0" mnemonicParsing="false" onAction="#orderDetailUpdate" prefHeight="39.0" prefWidth="78.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Update" visible="false" />
+                                          <Separator layoutX="17.0" layoutY="245.0" opacity="0.76" prefWidth="200.0" />
+                                          <ComboBox fx:id="order_productName" layoutX="101.0" layoutY="60.0" onAction="#initOrderDetailProdId" prefHeight="26.0" prefWidth="122.0" promptText="Choose..." styleClass="textfield" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="order_editButton" layoutX="774.0" layoutY="53.0" mnemonicParsing="false" onAction="#orderDetailEdit" prefHeight="26.0" prefWidth="74.0" styleClass="signout" stylesheets="@../css/dashboardDesign.css" text="EDIT" textFill="#00246b">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="cusForm" prefHeight="554.4" prefWidth="884.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="4.0" layoutY="2.0" prefHeight="545.0" prefWidth="871.0" stylesheets="@../css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="cus_searchBar" layoutX="9.0" layoutY="47.0" prefHeight="26.0" prefWidth="567.0" promptText="Search..." styleClass="search" stylesheets="@../css/dashboardDesign.css" />
+                                    <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="14.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="cus_tableView" layoutX="7.0" layoutY="83.0" onMouseClicked="#cusSelect" prefHeight="454.0" prefWidth="570.0" stylesheets="@../css/dashboardDesign.css">
+                                       <columns>
+                                          <TableColumn fx:id="cus_col_customerId" prefWidth="115.199951171875" text="Customer ID" />
+                                          <TableColumn fx:id="cus_col_customerName" prefWidth="129.60000610351562" text="Customer Name" />
+                                          <TableColumn fx:id="cus_col_customerEmail" minWidth="0.0" prefWidth="173.5999755859375" text="Email" />
+                                          <TableColumn fx:id="cus_col_customerPhoneNum" prefWidth="146.39999389648438" text="Phone Number" />
+                                       </columns>
+                                    </TableView>
+                                    <Button fx:id="cus_editButton" layoutX="767.0" layoutY="46.0" mnemonicParsing="false" onAction="#cusEdit" prefHeight="27.0" prefWidth="93.0" styleClass="signout" stylesheets="@../css/dashboardDesign.css" text="ADD/EDIT">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <AnchorPane fx:id="cus_editPane" layoutX="587.0" layoutY="83.0" prefHeight="454.0" prefWidth="276.0" stylesheets="@../css/dashboardDesign.css">
+                                       <styleClass>
+                                          <String fx:value="blue-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="35.0" layoutY="28.0" text="Customer ID:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="13.0" layoutY="63.0" text="Customer Name:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cus_customerName" layoutX="118.0" layoutY="58.0" prefHeight="26.0" prefWidth="141.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
+                                          <Label layoutX="73.0" layoutY="97.0" text="Email:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cus_customerEmail" layoutX="118.0" layoutY="93.0" prefHeight="26.0" prefWidth="141.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
+                                          <Label fx:id="cus_customerId" layoutX="118.0" layoutY="27.0" text="(Auto-generated)" textFill="#00246b">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="cus_addButton" layoutX="151.0" layoutY="251.0" mnemonicParsing="false" onAction="#cusAdd" prefHeight="58.0" prefWidth="90.0" styleClass="add-btn" text="Add">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="cus_updateButton" layoutX="151.0" layoutY="251.0" mnemonicParsing="false" onAction="#cusUpdate" prefHeight="58.0" prefWidth="90.0" styleClass="update-btn" text="Update" visible="false" />
+                                          <Button fx:id="cus_clearButton" layoutX="73.0" layoutY="178.0" mnemonicParsing="false" onAction="#cusClear" prefHeight="30.0" prefWidth="140.0" styleClass="clear-btn" text="Clear" />
+                                          <Button fx:id="cus_deleteButton" layoutX="45.0" layoutY="251.0" mnemonicParsing="false" onAction="#cusDelete" prefHeight="58.0" prefWidth="90.0" styleClass="delete-btn" text="Delete" visible="false" />
+                                          <Label layoutX="18.0" layoutY="132.0" text="Phone Number:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cus_customerPhoneNum" layoutX="118.0" layoutY="128.0" prefHeight="26.0" prefWidth="141.0" styleClass="textfield" stylesheets="@../css/dashboardDesign.css" />
+                                          <Separator layoutX="51.0" layoutY="224.0" opacity="0.79" prefHeight="14.0" prefWidth="200.0" />
+                                          <Button layoutX="245.0" layoutY="1.0" mnemonicParsing="false" onAction="#cusEditClose" styleClass="close" stylesheets="@../css/dashboardDesign.css">
+                                             <graphic>
+                                                <ImageView fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/close.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="17.0" layoutY="7.0" prefHeight="26.0" prefWidth="137.0" text="CUSTOMERS" textFill="#00246b">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="17.0" layoutY="34.0" opacity="0.6" prefHeight="11.0" prefWidth="834.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="ordListForm" layoutX="14.0" layoutY="14.0" prefHeight="554.4" prefWidth="882.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="4.0" layoutY="2.0" prefHeight="545.0" prefWidth="871.0" stylesheets="@../css/dashboardDesign.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="ordList_tableView" layoutX="8.0" layoutY="96.0" prefHeight="441.0" prefWidth="856.0" stylesheets="@../css/dashboardDesign.css">
+                                      <columns>
+                                        <TableColumn fx:id="ordList_col_orderId" prefWidth="159.20001792907715" text="Order ID" />
+                                        <TableColumn fx:id="ordList_col_orderDate" prefWidth="159.19992065429688" text="Order Date" />
+                                          <TableColumn fx:id="ordList_col_cusName" prefWidth="191.19998168945312" text="Customer Name" />
+                                          <TableColumn fx:id="ordList_col_items" prefWidth="59.20001220703125" text="Items" />
+                                          <TableColumn fx:id="ordList_col_total" prefWidth="176.0" text="Total" />
+                                          <TableColumn fx:id="ordList_col_orderEdit" prefWidth="63.199951171875" text="Details" />
+                                          <TableColumn fx:id="ordList_col_delete" prefWidth="41.5999755859375" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="373.0" layoutY="42.0" text="Start Date">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="ordList_startDate" layoutX="373.0" layoutY="58.0" onAction="#ordListSearch" prefHeight="26.0" prefWidth="165.0" promptText="mm/dd/yyy" stylesheets="@../css/dashboardDesign.css" />
+                                    <TextField fx:id="ordList_searchBar" layoutX="27.0" layoutY="58.0" onKeyTyped="#ordListSearch" prefHeight="26.0" prefWidth="326.0" promptText="Search..." styleClass="search" stylesheets="@../css/dashboardDesign.css" />
+                                    <ImageView fitHeight="22.0" fitWidth="35.0" layoutX="34.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../icons/search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="559.0" layoutY="42.0" text="End Date">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="ordList_endDate" layoutX="559.0" layoutY="58.0" onAction="#ordListSearch" prefHeight="26.0" prefWidth="165.0" promptText="mm/dd/yyy" styleClass="date-picker" stylesheets="@../css/dashboardDesign.css" />
+                                    <Button fx:id="ordList_newOrdButton" layoutX="758.0" layoutY="57.0" mnemonicParsing="false" onAction="#ordListNewOrd" prefHeight="27.0" prefWidth="99.0" styleClass="signout" stylesheets="@../css/dashboardDesign.css" text="NEW ORDER">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Button>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="27.0" layoutY="10.0" prefHeight="26.0" prefWidth="137.0" text="ORDER LIST" textFill="#00246b">
+                                 <font>
+                                    <Font name="System Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="27.0" layoutY="35.0" opacity="0.6" prefHeight="11.0" prefWidth="834.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="newOrderForm" layoutX="10.0" layoutY="10.0" prefHeight="565.6" prefWidth="896.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" layoutY="4.0" prefHeight="540.0" prefWidth="872.0" stylesheets="@../css/dashboardDesign.css">
+                                 <children>
+                                    <TableView fx:id="newOrder_tableView" layoutX="12.0" layoutY="104.0" onMouseClicked="#newOrderSelect" prefHeight="367.0" prefWidth="574.0" stylesheets="@../css/dashboardDesign.css">
+                                       <columns>
+                                          <TableColumn fx:id="newOrder_col_productId" prefWidth="94.39997673034668" text="Product ID" />
+                                          <TableColumn fx:id="newOrder_col_productName" prefWidth="147.20001983642578" text="Product Name" />
+                                          <TableColumn fx:id="newOrder_col_productType" prefWidth="74.40005493164062" text="Type" />
+                                          <TableColumn fx:id="newOrder_col_productPrice" prefWidth="107.20001220703125" text="Price" />
+                                          <TableColumn fx:id="newOrder_col_productQuantity" prefWidth="141.60000610351562" text="Quantity" />
+                                       </columns>
+                                    </TableView>
+                                    <Label layoutX="20.0" layoutY="10.0" prefHeight="26.0" prefWidth="137.0" text="NEW ORDER" textFill="#00246b">
+                                       <font>
+                                          <Font name="System Bold" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="48.0" layoutY="490.0" text="TOTAL AMOUNT: " textFill="#00246b">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="newOrder_total" layoutX="222.0" layoutY="490.0" text="0" textFill="#0cd110">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="16.0" layoutY="38.0" opacity="0.53" prefHeight="11.0" prefWidth="550.0" />
+                                    <Label layoutX="20.0" layoutY="49.0" text="ORDER ID " textFill="#00246b" />
+                                    <Label fx:id="newOrder_orderId" layoutX="20.0" layoutY="67.0" prefHeight="26.0" prefWidth="146.0" text="orderID" textFill="#00246b">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <AnchorPane fx:id="order_editPane1" layoutX="600.0" layoutY="4.0" prefHeight="525.0" prefWidth="266.0" styleClass="blue-bg" stylesheets="@../css/dashboardDesign.css">
+                                       <children>
+                                          <ComboBox fx:id="newOrder_productId" layoutX="107.0" layoutY="201.0" prefHeight="26.0" prefWidth="152.0" promptText="Choose..." styleClass="textfield" />
+                                          <Label layoutX="7.0" layoutY="166.0" text="Product Name: " textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="7.0" layoutY="206.0" text="Product ID: " textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="7.0" layoutY="246.0" text="Quantity:" textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Spinner fx:id="newOrder_quantity" editable="true" layoutX="107.0" layoutY="241.0" prefHeight="26.0" prefWidth="152.0" styleClass="textfield" />
+                                          <Button fx:id="newOrder_addButton" layoutX="95.0" layoutY="334.0" mnemonicParsing="false" onAction="#newOrderAdd" prefHeight="39.0" prefWidth="78.0" styleClass="add-btn" stylesheets="@../css/dashboardDesign.css" text="Add">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="newOrder_removeButton" layoutX="35.0" layoutY="334.0" mnemonicParsing="false" onAction="#newOrderRemove" prefHeight="39.0" prefWidth="78.0" styleClass="delete-btn" stylesheets="@../css/dashboardDesign.css" text="Remove" visible="false" />
+                                          <Button fx:id="newOrder_clearButton" layoutX="61.0" layoutY="290.0" mnemonicParsing="false" onAction="#newOrderProductClear" prefHeight="30.0" prefWidth="141.0" styleClass="clear-btn" stylesheets="@../css/dashboardDesign.css" text="Clear" />
+                                          <Button fx:id="newOrder_updateButton" layoutX="151.0" layoutY="334.0" mnemonicParsing="false" onAction="#newOrderUpdate" prefHeight="39.0" prefWidth="78.0" styleClass="update-btn" stylesheets="@../css/dashboardDesign.css" text="Update" visible="false" />
+                                          <ComboBox fx:id="newOrder_productName" layoutX="107.0" layoutY="161.0" onAction="#initNewOrdProdId" prefHeight="26.0" prefWidth="152.0" promptText="Choose..." styleClass="textfield" />
+                                          <ComboBox fx:id="newOrder_customerId" layoutX="107.0" layoutY="80.0" prefHeight="26.0" prefWidth="152.0" promptText="Choose..." styleClass="textfield" />
+                                          <Label layoutX="7.0" layoutY="45.0" text="Customer Name: " textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="7.0" layoutY="85.0" text="Customer ID: " textFill="#00246b">
+                                             <font>
+                                                <Font name="Calibri" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="newOrder_customerName" layoutX="107.0" layoutY="40.0" onAction="#initNewOrdCusId" prefHeight="26.0" prefWidth="152.0" promptText="Choose..." styleClass="textfield" />
+                                          <Separator layoutX="47.0" layoutY="119.0" opacity="0.77" prefHeight="11.0" prefWidth="174.0" />
+                                          <Label layoutX="103.0" layoutY="130.0" prefHeight="26.0" prefWidth="60.0" text="Product" textFill="#00246b">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="98.0" layoutY="8.0" prefHeight="26.0" prefWidth="72.0" text="Customer" textFill="#00246b">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Separator layoutX="47.0" layoutY="393.0" opacity="0.65" prefHeight="11.0" prefWidth="174.0" />
+                                          <Button fx:id="newOrder_saveButton" layoutX="21.0" layoutY="480.0" mnemonicParsing="false" onAction="#newOrderSave" prefHeight="36.0" prefWidth="222.0" styleClass="signout" stylesheets="@../css/dashboardDesign.css" text="SAVE" textFill="#3b3b3b">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <Separator layoutX="580.0" layoutY="14.0" opacity="0.54" orientation="VERTICAL" prefHeight="510.0" prefWidth="28.0" />
+                                    <Label layoutX="495.0" layoutY="49.0" text="ORDER DATE" textFill="#00246b" />
+                                    <Label fx:id="newOrder_orderDate" alignment="TOP_RIGHT" layoutX="220.0" layoutY="67.0" prefHeight="26.0" prefWidth="345.0" text="orderDate" textFill="#00246b">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

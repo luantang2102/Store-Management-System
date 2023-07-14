@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.storemanagementsystemfx.controller.LoginController">
+   <children>
+      <AnchorPane fx:id="mainForm" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane fx:id="signup_pane" prefHeight="400.0" prefWidth="300.0" styleClass="left-form" stylesheets="@../css/loginDesign.css" visible="false">
+               <children>
+                  <TextField fx:id="signup_username" layoutX="53.0" layoutY="160.0" onAction="#login" prefHeight="26.0" prefWidth="196.0" promptText="Username" styleClass="textfield" stylesheets="@../css/loginDesign.css" />
+                  <PasswordField fx:id="signup_password" layoutX="53.0" layoutY="200.0" onAction="#login" prefHeight="26.0" prefWidth="196.0" promptText="Password" styleClass="textfield" stylesheets="@../css/loginDesign.css" />
+                  <Label layoutX="100.0" layoutY="88.0" prefHeight="38.0" prefWidth="100.0" text="Sign Up" textFill="#181717">
+                     <font>
+                        <Font name="Berlin Sans FB" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" layoutX="126.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/user.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="signup_signupButton" layoutX="112.0" layoutY="293.0" mnemonicParsing="false" onAction="#signup" prefHeight="38.0" prefWidth="78.0" styleClass="login-btn" stylesheets="@../css/loginDesign.css" text="Sign Up" />
+                  <PasswordField fx:id="signup_repassword" layoutX="53.0" layoutY="240.0" onAction="#login" prefHeight="26.0" prefWidth="196.0" promptText="Re-enter Passsword" styleClass="textfield" stylesheets="@../css/loginDesign.css" />
+                  <Label layoutX="58.0" layoutY="349.0" text="Already have an account?" />
+                  <Separator layoutX="53.0" layoutY="345.0" prefWidth="200.0" />
+                  <Button fx:id="signup_loginButton" layoutX="193.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchPane" styleClass="signup-btn" stylesheets="@../css/loginDesign.css" text="Log in" textFill="#15b9f4" underline="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="signIn_pane" prefHeight="400.0" prefWidth="300.0" styleClass="left-form" stylesheets="@../css/loginDesign.css">
+               <children>
+                  <TextField fx:id="username" layoutX="53.0" layoutY="158.0" onAction="#login" prefHeight="26.0" prefWidth="196.0" promptText="Username" styleClass="textfield" stylesheets="@../css/loginDesign.css" />
+                  <PasswordField fx:id="password" layoutX="53.0" layoutY="198.0" onAction="#login" prefHeight="26.0" prefWidth="196.0" promptText="Password" styleClass="textfield" stylesheets="@../css/loginDesign.css" />
+                  <Label layoutX="108.0" layoutY="88.0" prefHeight="38.0" prefWidth="86.0" text="Sign In" textFill="#181717">
+                     <font>
+                        <Font name="Berlin Sans FB" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="47.0" fitWidth="50.0" layoutX="126.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/user.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="loginButton" layoutX="110.0" layoutY="254.0" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="78.0" styleClass="login-btn" stylesheets="@../css/loginDesign.css" text="Login" />
+                  <Label layoutX="56.0" layoutY="310.0" text="Don't have any account?" />
+                  <Separator layoutX="51.0" layoutY="306.0" prefWidth="200.0" />
+                  <Button fx:id="signUpButton" layoutX="185.0" layoutY="306.0" mnemonicParsing="false" onAction="#switchPane" styleClass="signup-btn" stylesheets="@../css/loginDesign.css" text="Sign Up" textFill="#15b9f4" underline="true" />
+               </children></AnchorPane>
+            <AnchorPane layoutX="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="right-form" stylesheets="@../css/loginDesign.css">
+               <children>
+                  <Button layoutX="245.0" layoutY="2.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="53.0" styleClass="close" stylesheets="@../css/loginDesign.css">
+                     <graphic>
+                        <ImageView fx:id="closeButton" fitHeight="15.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="110.0" fitWidth="112.0" layoutX="95.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/store.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="51.0" layoutY="232.0" text="Store Management System" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="20.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
