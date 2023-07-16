@@ -19,7 +19,7 @@ you can easily track important information and monitor the performance of your s
 
 ## **Screenshot reviews**
 - Login form:
-![](login.png "Account Login")
+<img src=login.png width="400" height="400" />
 - Dashboard:
 ![](dashboard.png "Dashboard")
 - Products View:
